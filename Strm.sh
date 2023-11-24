@@ -15,7 +15,7 @@ if [ $1 ]; then
 		if [ ! "$local_sha" == "$remote_sha" ]; then
 			docker rmi xiaoyaliu/glue:python
 		fi
-		docker run -i --rm -v $1:/media -v $1/strm.txt:/strm.txt -e LANG=C.UTF-8  xiaoyaliu/glue:python /init.sh
+		docker run --rm -v $1:/media -v $1/strm.txt:/strm.txt -e LANG=C.UTF-8  xiaoyaliu/glue:python /init.sh
 	else
 		echo "$1/strm.txt 为空文件，请编辑后重试"
 		exit
